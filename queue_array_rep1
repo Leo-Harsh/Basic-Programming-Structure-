@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define N 10
+ int front1=-1;
+  int queue_1[N];
+ int rear=-1;
+
+  insert_1(int n )
+{
+    if ((front1==0) && (rear==N-1)|| (front1==rear+1))
+    {
+        cout<<"Queue is full Sorry"<<endl;
+    }
+    else if((front1==-1)&& (rear ==-1))
+    {
+         front1=0;
+        rear=0;
+        queue_1[front1]=n;
+
+    }
+    else {
+       if (rear==N)
+    {    rear=0;
+        queue_1[rear]=n;
+    }
+    else {
+        rear++;
+        queue_1[rear]=n;
+
+    }
+    }
+}
+delete1()
+{
+    if ((front1==-1 && rear==-1))
+    {
+        cout<<"Queue is empty Sorry Please add something to delete"<<endl;
+    }
+    else if (front1==rear)
+    {    queue_1[front1]=NULL;
+        rear=-1;
+        front1=-1;
+
+    }
+    else {  queue_1[front1]=NULL;
+            cout<<"Value is deleted"<<endl;
+
+              front1++;
+}}
+print()
+{
+    for(int i=0;i<=N;i++)
+    {
+        cout<<queue_1[i]<<endl;
+    }
+    cout<<"Front of queue is"<<front1<<"  "<<queue_1[front1]<<"rear of queue is "<<rear<<" "<<queue_1[rear]<<endl;
+}
+int main()
+{
+
+    int a[N];
+
+    delete1();
+     insert_1(3);
+    delete1();
+    insert_1(7);
+    insert_1(1);
+    insert_1(22);
+    print();
+}
