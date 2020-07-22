@@ -1,3 +1,4 @@
+//circuar queue using array
 #include<bits/stdc++.h>
 using namespace std;
 #define N 10
